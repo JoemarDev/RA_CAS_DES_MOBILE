@@ -6,6 +6,10 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+textarea:focus {
+    outline: none;
+}
+
 #odometer {
     color: #dac179;
     font-size: 50px;
@@ -161,7 +165,7 @@ select:focus {
     margin-bottom: 5px;
 }
 
-.game-detail .game-button {
+.game-button {
     background: linear-gradient(to bottom, #e4cd87 0%, #ac8633 100%);
     height: 40px;
     border: 1px solid #dac179;
@@ -169,7 +173,6 @@ select:focus {
     color: #000000;
     width: 120px;
     font-size: 14px;
-    max-width: 95%;
 }
 
 .jackpot-container {
@@ -276,4 +279,51 @@ label.title:hover {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e1ca84', endColorstr='#ac8734', GradientType=0);
     border: 1px solid #e1ca84;
     color: #000;
+}
+
+
+
+.guess-container {
+    display: block;
+}
+
+.member-container {
+    display: none;
+}
+
+
+.content_dialog_page {
+    text-align: center;
+    color: #fff;
+}
+
+.content_dialog_page ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.content_dialog_page li {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 12px;
+    border: 1px solid #333
+}
+
+.content_dialog_page li.active {
+    background: #ad8734;
+    border: 1px solid #ad8734
+}
+
+.elip {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
 }

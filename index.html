@@ -30,10 +30,67 @@
         <!-- Banner Section -->
 
         <!-- Navigation Section -->
-        <div class="navigation-button">
-            <button class="signin" onclick="OpenLoginDialog()">로그인</button>
-            <button class="signup" onclick="OpenRegisterDialog()">회원가입</button>
+        <div class="guess-container">
+            <div class="navigation-button">
+                <button class="signin" onclick="OpenLoginDialog()">로그인</button>
+                <button class="signup" onclick="OpenRegisterDialog()">회원가입</button>
+            </div>
         </div>
+        <!-- Member Navigation -->
+        <div class="member-container">
+            <!-- Member Account Information -->
+            <div class="bg-theme-2/50 p-2 text-white">
+                <div class="grid grid-cols-2">
+                    <div class="p-2 col-span-1 border-t border-white border-l">
+                        <div class="flex items-center justify-between">
+                            <img class="w-8" src="./assets/images/mobile/icons/user-icon.svg" alt="">
+                            <label for="">A003</label>
+                        </div>
+                    </div>
+                    <div class="p-2 col-span-1 border-t border-white border-x">
+                        <div class="flex items-center justify-between">
+                            <img class="w-8" src="./assets/images/mobile/icons/wallet-icon.svg" alt="">
+                            <label for="">0 원</label>
+                        </div>
+                    </div>
+                    <div class="p-2 col-span-2 border-t border-white border-x border-b">
+                        <div class="flex items-center justify-between">
+                            <img class="w-8" src="./assets/images/mobile/icons/points-icon.svg" alt="">
+
+                            <div class="flex items-center">
+                                <span class="mr-2">0</span>
+                                <button class="p-1 px-2 text-xs bg-theme-3 rounded text-black">콤프</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="OpenAccountDialog()"
+                    class="font-bold game-button w-full py-2 text-black text-center mt-2 rounded">
+                    마이 페이지
+                </button>
+            </div>
+            <!-- Member Account Information -->
+
+            <div class="grid grid-cols-4 gap-2 px-4 text-white text-center font-bold">
+                <div class="p-2" onclick="OpenDepositDialog()">
+                    <img class="mx-auto mb-1" src="./assets/images/mobile/navigation/deposit-icon.svg" alt="">
+                    <label for="">입금</label>
+                </div>
+                <div class="p-2" onclick="OpenWithdrawalDialog()">
+                    <img class="mx-auto mb-1" src="./assets/images/mobile/navigation/withdraw-icon.svg" alt="">
+                    <label for="">출금</label>
+                </div>
+                <div class="p-2" onclick="OpenMoneyMoveDialog()">
+                    <img class="mx-auto mb-1" src="./assets/images/mobile/navigation/money-transfer-icon.svg" alt="">
+                    <label for="">머니이동</label>
+                </div>
+                <div class="p-2" onclick="OpenNoteDialog()">
+                    <img class="mx-auto mb-1" src="./assets/images/mobile/navigation/withdraw-icon.svg" alt="">
+                    <label for="">쪽지함</label>
+                </div>
+            </div>
+        </div>
+        <!-- Member Navigation -->
         <!-- Navigation Section -->
 
         <!-- Game Container Section -->
@@ -340,23 +397,23 @@
 
         <!-- Mobile Navigation Section -->
         <div class="mobile-navigation grid grid-cols-5 text-white text-center text-xs py-2 sticky bottom-0 z-10">
-            <div onclick="OpenLoginDialog()" class="m border-r border-theme-3/5">
+            <div onclick="OpenNoticeDialog()" class="m border-r border-theme-3/5">
                 <img class="w-8 mx-auto mb-2" src="./assets/images/mobile-nav-icons/1.svg" alt="">
                 <p>공지사항</p>
             </div>
-            <div onclick="OpenLoginDialog()" class="m border-r border-theme-3/5">
+            <div onclick="OpenEventDialog()" class="m border-r border-theme-3/5">
                 <img class="w-8 mx-auto mb-2" src="./assets/images/mobile-nav-icons/2.svg" alt="">
                 <p>공지사항</p>
             </div>
-            <div onclick="OpenLoginDialog()" class="m border-r border-theme-3/5">
+            <div onclick="OpenInquiryDialog()" class="m border-r border-theme-3/5">
                 <img class="w-8 mx-auto mb-2" src="./assets/images/mobile-nav-icons/3.svg" alt="">
                 <p>공지사항</p>
             </div>
-            <div onclick="OpenLoginDialog()" class="m border-r border-theme-3/5">
+            <div onclick="OpenNoteDialog()" class="m border-r border-theme-3/5">
                 <img class="w-8 mx-auto mb-2" src="./assets/images/mobile-nav-icons/4.svg" alt="">
                 <p>공지사항</p>
             </div>
-            <div onclick="OpenLoginDialog()" class="m border-r border-theme-3/5">
+            <div class="m border-r border-theme-3/5">
                 <img class="w-8 mx-auto mb-2" src="./assets/images/mobile-nav-icons/5.svg" alt="">
                 <p>공지사항</p>
             </div>
@@ -904,7 +961,7 @@
             <div class="login-modal h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll ">
                 <div class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30">
                     <h2 class="font-bold">로그인</h2>
-                    <button class="absolute right-5 py-5" onclick="CloseLoginDialog()">
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
                         <img class="w-6" src="./assets/images/icons/close.svg" alt="">
                     </button>
                 </div>
@@ -936,7 +993,7 @@
                                             class="text-sm bg-transparent text-white" placeholder="비밀번호">
                                     </div>
                                 </div>
-                                <button style="height: 40px"
+                                <button onclick="MemberLogin()" type="button" style="height: 40px"
                                     class=" w-full submit-btn button-1 mb-2 border-theme-3">로그인</button>
                                 <button onclick="OpenRegisterDialog()" type="button" style="height: 40px"
                                     class=" w-full submit-btn button-1 active">회원가입</button>
@@ -959,7 +1016,7 @@
                 <div class="container mx-auto">
                     <div class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30">
                         <h2 class="font-bold">회원가입</h2>
-                        <button class="absolute right-5 py-5" onclick="CloseRegisterDialog()">
+                        <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
                             <img class="w-6" src="./assets/images/icons/close.svg" alt="">
                         </button>
                     </div>
@@ -1088,6 +1145,1356 @@
         </div>
         <!-- REGISTER DIALOG -->
 
+        <!-- ACCOUNT DIALOG -->
+        <div class="ACCOUNT_DIALOG text-white z-10 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">내 계정</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAccountDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+                <div class="flex justify-between items-center p-4 py-2">
+                    <!-- Account Name -->
+                    <div class="flex items-center gap-2">
+                        <label for="">A003</label>
+                        <div class="bg-red-500 flex px-2 rounded">
+                            <img class="w-4" src="./assets/images/mobile/icons/mail.svg" alt="">
+                            <span>0</span>
+                        </div>
+                    </div>
+                    <!-- Account Name -->
+
+                    <!-- Reload button -->
+                    <div class="game-button p-2 w-10 rounded">
+                        <img src="./assets/images/mobile/icons/reload.svg" alt="">
+                    </div>
+                    <!-- Reload button -->
+                </div>
+                <div class="flex justify-between items-center px-4 bg-theme-2/50 py-4">
+                    <label>보유 중인 게임 머니</label>
+                    <label>0 원</label>
+                </div>
+                <div class="game-balance text-sm">
+                    <div class="text-right py-3 px-4 bg-white/20  font-semibold">카지노 게임</div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">에볼루션 라이브</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">에볼루션 라이브</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">프라그마틱플레이 라이브</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">섹시게이밍 라이</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">올벳 라이브</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">비보게이밍 라이브</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">비보알라딘 라이브</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">WM게이밍 라이브</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">빅게이밍 라이브</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">오리엔탈게이밍 라이브</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">프로비전 라이브</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">마이크로게이밍 라이브&슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">아시아게이밍 라이브&슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">플레이테크 라이브&슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">게임플레이 라이브&슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">비비아이엔 라이브 & 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">프라그마틱플레이 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">넷엔트 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">플레이앤고 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">하바네로 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">이그드라실 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">레드타이거 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">부운고 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">씨큐나인게이밍 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">포켓게임스 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">리얼타임게이밍 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">스카이윈드 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">스페이드게이밍 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">탑트렌드게이밍 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">드림테크 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">벳소프트 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">벳소프트 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">퀵스핀 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">레드레이크 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">릴렉스게이밍 슬롯</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">플레이손 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">블루프린트 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">에보플레이 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">가마트론 슬롯</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">올웨이스핀 슬롯</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">드래곤게이밍 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">톰혼 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">비비테크 슬롯</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">스피노미널 슬롯</label>
+                        <label class="maintinance  text-xs px-2 bg-red-500 w-14 ml-auto text-center  rounded">
+                            점검중</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">만칼라게이밍 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">아메바 슬</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">10BET 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">PINNACLE 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">SBO BET 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">IBC 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">BETCONSTRUCT 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">IGK BET 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">UG 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">SONG88 스포츠</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">ACG 미니</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">레드타이거 슬롯</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">스카이시티 미니</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">게임플레이 가위바위보</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">게임플레이 R로터리</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                    <div class="text-right py-2 px-4 odd:bg-theme-2/10 even:bg-theme-2/80">
+                        <label class="block text-white/50 mb-1">V2G 골든레이스</label>
+                        <label class="font-bold">0 원</label>
+                    </div>
+                </div>
+
+                <div class="account-menu p-4 bg-theme-1">
+                    <div class="grid grid-cols-2 gap-1 text-center ">
+                        <div onclick="OpenMoneyMoveDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">머니확인/이동
+                        </div>
+                        <div onclick="OpenDepositDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">입금 신청
+                        </div>
+                        <div onclick="OpenWithdrawalDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">출금신청
+                        </div>
+                        <div onclick="OpenBonusDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">포인트내역
+                        </div>
+                        <div onclick="OpenFriendDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">친구 목록
+                        </div>
+                        <div onclick="OpenCouponDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">쿠폰 내역
+                        </div>
+                        <div onclick="OpenHistoryDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">입출금 내역
+                        </div>
+                        <div onclick="OpenChangePasswordDialog()"
+                            class="col-span-1 font-normal game-button w-full flex justify-center items-center">비밀번호 변경
+                        </div>
+                        <div onclick="MemberLogout()"
+                            class="col-span-2 game-button w-full flex justify-center items-center">로그아웃</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ACCOUNT DIALOG -->
+
+        <!-- DEPOSIT DIALOG -->
+        <div class="DEPOSIT_DIGALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">입금 신청</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="p-4 text-sm mb-2">
+                    <div class="p-3 border text-theme-3 border-white/20">
+                        <label>수표입금시 입금처리 절대 되지 않습니다</label>
+                    </div>
+                </div>
+                <div class="px-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <button class="game-button">CRYPTYONE</button>
+                        <button class="game-button opacity-50">은행계좌 입금</button>
+                    </div>
+
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>게임선택</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <select class="input-1 text-white">
+                            <option selected="selected" value="" class="">게임을 선택해주세요</option>
+                            <optgroup label="카지노 게임">
+                                <option label="에볼루션 라이브" value="string:1058">에볼루션 라이브</option>
+                                <option label="프라그마틱플레이 라이브" value="string:1118">프라그마틱플레이 라이브</option>
+                                <option label="섹시게이밍 라이브" value="string:1147">섹시게이밍 라이브</option>
+                                <option label="올벳 라이브" value="string:1051">올벳 라이브</option>
+                                <option label="WM게이밍 라이브" value="string:1045">WM게이밍 라이브</option>
+                                <option label="빅게이밍 라이브" value="string:1114">빅게이밍 라이브</option>
+                                <option label="오리엔탈게이밍 라이브" value="string:1023">오리엔탈게이밍 라이브</option>
+                                <option label="마이크로게이밍 라이브&amp;슬롯" value="string:1112">마이크로게이밍 라이브&amp;슬롯</option>
+                                <option label="아시아게이밍 라이브&amp;슬롯" value="string:1012">아시아게이밍 라이브&amp;슬롯</option>
+                                <option label="플레이테크 라이브&amp;슬롯" value="string:1047">플레이테크 라이브&amp;슬롯</option>
+                                <option label="게임플레이 라이브&amp;슬롯" value="string:1027">게임플레이 라이브&amp;슬롯</option>
+                                <option label="비비아이엔 라이브 &amp; 슬롯" value="string:1052">비비아이엔 라이브 &amp; 슬롯</option>
+                            </optgroup>
+                            <optgroup label="슬롯 게임">
+                                <option label="프라그마틱플레이 슬롯" value="string:1065">프라그마틱플레이 슬롯</option>
+                                <option label="넷엔트 슬롯" value="string:1123">넷엔트 슬롯</option>
+                                <option label="플레이앤고 슬롯" value="string:1156">플레이앤고 슬롯</option>
+                                <option label="하바네로 슬롯" value="string:1066">하바네로 슬롯</option>
+                                <option label="이그드라실 슬롯" value="string:1104">이그드라실 슬롯</option>
+                                <option label="레드타이거 슬롯" value="string:1149">레드타이거 슬롯</option>
+                                <option label="부운고 슬롯" value="string:1111">부운고 슬롯</option>
+                                <option label="씨큐나인게이밍 슬롯" value="string:1138">씨큐나인게이밍 슬롯</option>
+                                <option label="포켓게임스 슬롯" value="string:1125">포켓게임스 슬롯</option>
+                                <option label="리얼타임게이밍 슬롯" value="string:1079">리얼타임게이밍 슬롯</option>
+                                <option label="스카이윈드 슬롯" value="string:1105">스카이윈드 슬롯</option>
+                                <option label="스페이드게이밍 슬롯" value="string:1080">스페이드게이밍 슬롯</option>
+                                <option label="탑트렌드게이밍 슬롯" value="string:1098">탑트렌드게이밍 슬롯</option>
+                                <option label="드림테크 슬롯" value="string:1008">드림테크 슬롯</option>
+                                <option label="벳소프트 슬롯" value="string:1034">벳소프트 슬롯</option>
+                                <option label="퀵스핀 슬롯" value="string:1124">퀵스핀 슬롯</option>
+                                <option label="레드레이크 슬롯" value="string:1134">레드레이크 슬롯</option>
+                                <option label="플레이손 슬롯" value="string:1132">플레이손 슬롯</option>
+                                <option label="블루프린트 슬롯" value="string:1136">블루프린트 슬롯</option>
+                                <option label="에보플레이 슬롯" value="string:1140">에보플레이 슬롯</option>
+                                <option label="드래곤게이밍 슬롯" value="string:1146">드래곤게이밍 슬롯</option>
+                                <option label="톰혼 슬롯" value="string:1150">톰혼 슬롯</option>
+                                <option label="만칼라게이밍 슬롯" value="string:1152">만칼라게이밍 슬롯</option>
+                                <option label="아메바 슬롯" value="string:1099">아메바 슬롯</option>
+                            </optgroup>
+                            <optgroup label="스포츠베팅">
+                                <option label="10BET 스포츠" value="string:1044">10BET 스포츠</option>
+                                <option label="PINNACLE 스포츠" value="string:1060">PINNACLE 스포츠</option>
+                                <option label="SBO BET 스포츠" value="string:1096">SBO BET 스포츠</option>
+                                <option label="IBC 스포츠" value="string:1091">IBC 스포츠</option>
+                                <option label="BETCONSTRUCT 스포츠" value="string:1106">BETCONSTRUCT 스포츠</option>
+                                <option label="IGK BET 스포츠" value="string:1095">IGK BET 스포츠</option>
+                                <option label="UG 스포츠" value="string:1056">UG 스포츠</option>
+                            </optgroup>
+                            <optgroup label="미니 게임">
+                                <option label="부스타빗 그래프" value="string:1142">부스타빗 그래프</option>
+                                <option label="스카이시티 미니" value="string:1073">스카이시티 미니</option>
+                                <option label="게임플레이 사다리" value="string:1006">게임플레이 사다리</option>
+                                <option label="게임플레이 가위바위보" value="string:1004">게임플레이 가위바위보</option>
+                                <option label="V2G 골든레이스" value="string:1145">V2G 골든레이스</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>입금하실 금액</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <div class="flex gap-1 mb-2">
+                            <div class="input-1 flex items-center gap-2 mr-0">
+                                <input class="w-full text-right text-white bg-transparent" type="text" value="0">
+                                <label>원</label>
+                            </div>
+                            <button class="bg-white/50 p-2 px-4">Clear</button>
+                        </div>
+                        <div class="grid grid-cols-5 gap-1 text-sm mb-1">
+                            <button class="py-3 bg-red-600">1만원</button>
+                            <button class="py-3 bg-red-600">5만원</button>
+                            <button class="py-3 bg-red-600">10만원</button>
+                            <button class="py-3 bg-red-600">50만원</button>
+                            <button class="py-3 bg-red-600">100만원</button>
+                        </div>
+                        <label class="opacity-50 text-sm ">최소 입금 금액은 3만원부터 신청 가능합니다.</label>
+
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <div class="flex gap-2">
+                            <label class="text-sm">보너스를 받으시겠습니까?</label>
+                            <div class="flex gap-1">
+                                <input type="radio">
+                                <span>예</span>
+                            </div>
+                            <div class="flex gap-1">
+                                <input type="radio">
+                                <span>아니오</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>게임선택</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+
+                        <input class="w-full input-1" type="text" disabled value="**">
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>남길 말</span>
+                        </label>
+
+                        <textarea class="w-full input-1 py-2 h-20" type="text"
+                            placeholder="남길 말은 300자 이하로만 입력해 주세요"></textarea>
+                    </div>
+
+                    <div class="input-wrapper mb-4 border-white/50 border text-theme-3 text-base font-bold p-4">
+                        <p class="mb-1">23:50 ~ 00:30, 휴일 다음 첫 영업일 새벽에는 은행점검으로 인해 계좌이체가 지연될 수 있습니다</p>
+                        <p class="mb-1">위 시간 이외에도 몇몇 은행은 추가적 점검시간이 따로 있으니 이점 유념하시기 바랍니다</p>
+                        <p class="mb-1">토스 및 페이어플, 펌뱅킹, TM 입금 및 무통장입금 이체시 금액이 반환되십니다. 주의부탁드리겠습니다.</p>
+                        <p class="mb-1">입금액과 입금신청액이 상이할시 입금신청이 취소되며, 재신청 안내드리고있습니다.</p>
+                        <p class="mb-1">(입금액과 입금신청액 동일하게 신청부탁드리겠습니다.)</p>
+                    </div>
+
+                    <button class="game-button w-full">입금신청</button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <!-- DEPOSIT DIALOG -->
+
+        <!-- WITHDRAWAL DIALOG -->
+        <div class="WITHDRAWAL_DIGALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">출금 신청</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+                <div class="p-4">
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>게임선택</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <select class="input-1 text-white">
+                            <option selected="selected" value="" class="">게임을 선택해주세요</option>
+                            <optgroup label="카지노 게임">
+                                <option label="에볼루션 라이브" value="string:1058">에볼루션 라이브</option>
+                                <option label="프라그마틱플레이 라이브" value="string:1118">프라그마틱플레이 라이브</option>
+                                <option label="섹시게이밍 라이브" value="string:1147">섹시게이밍 라이브</option>
+                                <option label="올벳 라이브" value="string:1051">올벳 라이브</option>
+                                <option label="WM게이밍 라이브" value="string:1045">WM게이밍 라이브</option>
+                                <option label="빅게이밍 라이브" value="string:1114">빅게이밍 라이브</option>
+                                <option label="오리엔탈게이밍 라이브" value="string:1023">오리엔탈게이밍 라이브</option>
+                                <option label="마이크로게이밍 라이브&amp;슬롯" value="string:1112">마이크로게이밍 라이브&amp;슬롯</option>
+                                <option label="아시아게이밍 라이브&amp;슬롯" value="string:1012">아시아게이밍 라이브&amp;슬롯</option>
+                                <option label="플레이테크 라이브&amp;슬롯" value="string:1047">플레이테크 라이브&amp;슬롯</option>
+                                <option label="게임플레이 라이브&amp;슬롯" value="string:1027">게임플레이 라이브&amp;슬롯</option>
+                                <option label="비비아이엔 라이브 &amp; 슬롯" value="string:1052">비비아이엔 라이브 &amp; 슬롯</option>
+                            </optgroup>
+                            <optgroup label="슬롯 게임">
+                                <option label="프라그마틱플레이 슬롯" value="string:1065">프라그마틱플레이 슬롯</option>
+                                <option label="넷엔트 슬롯" value="string:1123">넷엔트 슬롯</option>
+                                <option label="플레이앤고 슬롯" value="string:1156">플레이앤고 슬롯</option>
+                                <option label="하바네로 슬롯" value="string:1066">하바네로 슬롯</option>
+                                <option label="이그드라실 슬롯" value="string:1104">이그드라실 슬롯</option>
+                                <option label="레드타이거 슬롯" value="string:1149">레드타이거 슬롯</option>
+                                <option label="부운고 슬롯" value="string:1111">부운고 슬롯</option>
+                                <option label="씨큐나인게이밍 슬롯" value="string:1138">씨큐나인게이밍 슬롯</option>
+                                <option label="포켓게임스 슬롯" value="string:1125">포켓게임스 슬롯</option>
+                                <option label="리얼타임게이밍 슬롯" value="string:1079">리얼타임게이밍 슬롯</option>
+                                <option label="스카이윈드 슬롯" value="string:1105">스카이윈드 슬롯</option>
+                                <option label="스페이드게이밍 슬롯" value="string:1080">스페이드게이밍 슬롯</option>
+                                <option label="탑트렌드게이밍 슬롯" value="string:1098">탑트렌드게이밍 슬롯</option>
+                                <option label="드림테크 슬롯" value="string:1008">드림테크 슬롯</option>
+                                <option label="벳소프트 슬롯" value="string:1034">벳소프트 슬롯</option>
+                                <option label="퀵스핀 슬롯" value="string:1124">퀵스핀 슬롯</option>
+                                <option label="레드레이크 슬롯" value="string:1134">레드레이크 슬롯</option>
+                                <option label="플레이손 슬롯" value="string:1132">플레이손 슬롯</option>
+                                <option label="블루프린트 슬롯" value="string:1136">블루프린트 슬롯</option>
+                                <option label="에보플레이 슬롯" value="string:1140">에보플레이 슬롯</option>
+                                <option label="드래곤게이밍 슬롯" value="string:1146">드래곤게이밍 슬롯</option>
+                                <option label="톰혼 슬롯" value="string:1150">톰혼 슬롯</option>
+                                <option label="만칼라게이밍 슬롯" value="string:1152">만칼라게이밍 슬롯</option>
+                                <option label="아메바 슬롯" value="string:1099">아메바 슬롯</option>
+                            </optgroup>
+                            <optgroup label="스포츠베팅">
+                                <option label="10BET 스포츠" value="string:1044">10BET 스포츠</option>
+                                <option label="PINNACLE 스포츠" value="string:1060">PINNACLE 스포츠</option>
+                                <option label="SBO BET 스포츠" value="string:1096">SBO BET 스포츠</option>
+                                <option label="IBC 스포츠" value="string:1091">IBC 스포츠</option>
+                                <option label="BETCONSTRUCT 스포츠" value="string:1106">BETCONSTRUCT 스포츠</option>
+                                <option label="IGK BET 스포츠" value="string:1095">IGK BET 스포츠</option>
+                                <option label="UG 스포츠" value="string:1056">UG 스포츠</option>
+                            </optgroup>
+                            <optgroup label="미니 게임">
+                                <option label="부스타빗 그래프" value="string:1142">부스타빗 그래프</option>
+                                <option label="스카이시티 미니" value="string:1073">스카이시티 미니</option>
+                                <option label="게임플레이 사다리" value="string:1006">게임플레이 사다리</option>
+                                <option label="게임플레이 가위바위보" value="string:1004">게임플레이 가위바위보</option>
+                                <option label="V2G 골든레이스" value="string:1145">V2G 골든레이스</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>출금하실 금액</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <div class="flex gap-1 mb-2">
+                            <div class="input-1 flex items-center gap-2 mr-0">
+                                <input class="w-full text-right text-white bg-transparent" type="text" value="0">
+                                <label>원</label>
+                            </div>
+                            <button class="bg-white/50 p-2 px-4">Clear</button>
+                        </div>
+                        <div class="grid grid-cols-5 gap-1 text-sm mb-1">
+                            <button class="py-3 bg-red-600">1만원</button>
+                            <button class="py-3 bg-red-600">5만원</button>
+                            <button class="py-3 bg-red-600">10만원</button>
+                            <button class="py-3 bg-red-600">50만원</button>
+                            <button class="py-3 bg-red-600">100만원</button>
+                        </div>
+                        <label class="opacity-50 text-sm ">최소 출금 금액은 1만원부터 신청 가능합니다.</label>
+
+                    </div>
+
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>은행명</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <select class="input-1 text-white mb-2" disabled>
+                            <option selected="selected" value="" class="">SC제일은행</option>
+                        </select>
+                        <input type="text" class="input-1 w-full" disabled value="33330587115**" placeholder="계좌번호">
+                    </div>
+
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>출금자명</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" class="input-1 w-full" disabled value="**">
+                    </div>
+
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>남길 말</span>
+                        </label>
+
+                        <textarea class="w-full input-1 py-2 h-20" type="text"
+                            placeholder="남길 말은 300자 이하로만 입력해 주세요"></textarea>
+                    </div>
+
+                    <div class="input-wrapper mb-4 border-white/50 border text-theme-3 text-base font-bold p-4">
+                        <p class="mb-1">입금자명과 출금자명이 다를경우 본인확인 요청이 있을 수 있습니다</p>
+                    </div>
+
+                    <button class="game-button w-full">출금신청</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- WITHDRAWAL DIALOG -->
+
+        <!-- MONEY MOVE DIALOG -->
+        <div class="MONEY_MOVE_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">머니확인/이동</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+                <div class="p-4">
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>이동 전 게임 선택</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <select class="input-1 text-white">
+                            <option selected="selected" value="" class="">게임을 선택해주세요</option>
+                            <optgroup label="카지노 게임">
+                                <option label="에볼루션 라이브" value="string:1058">에볼루션 라이브</option>
+                                <option label="프라그마틱플레이 라이브" value="string:1118">프라그마틱플레이 라이브</option>
+                                <option label="섹시게이밍 라이브" value="string:1147">섹시게이밍 라이브</option>
+                                <option label="올벳 라이브" value="string:1051">올벳 라이브</option>
+                                <option label="WM게이밍 라이브" value="string:1045">WM게이밍 라이브</option>
+                                <option label="빅게이밍 라이브" value="string:1114">빅게이밍 라이브</option>
+                                <option label="오리엔탈게이밍 라이브" value="string:1023">오리엔탈게이밍 라이브</option>
+                                <option label="마이크로게이밍 라이브&amp;슬롯" value="string:1112">마이크로게이밍 라이브&amp;슬롯</option>
+                                <option label="아시아게이밍 라이브&amp;슬롯" value="string:1012">아시아게이밍 라이브&amp;슬롯</option>
+                                <option label="플레이테크 라이브&amp;슬롯" value="string:1047">플레이테크 라이브&amp;슬롯</option>
+                                <option label="게임플레이 라이브&amp;슬롯" value="string:1027">게임플레이 라이브&amp;슬롯</option>
+                                <option label="비비아이엔 라이브 &amp; 슬롯" value="string:1052">비비아이엔 라이브 &amp; 슬롯</option>
+                            </optgroup>
+                            <optgroup label="슬롯 게임">
+                                <option label="프라그마틱플레이 슬롯" value="string:1065">프라그마틱플레이 슬롯</option>
+                                <option label="넷엔트 슬롯" value="string:1123">넷엔트 슬롯</option>
+                                <option label="플레이앤고 슬롯" value="string:1156">플레이앤고 슬롯</option>
+                                <option label="하바네로 슬롯" value="string:1066">하바네로 슬롯</option>
+                                <option label="이그드라실 슬롯" value="string:1104">이그드라실 슬롯</option>
+                                <option label="레드타이거 슬롯" value="string:1149">레드타이거 슬롯</option>
+                                <option label="부운고 슬롯" value="string:1111">부운고 슬롯</option>
+                                <option label="씨큐나인게이밍 슬롯" value="string:1138">씨큐나인게이밍 슬롯</option>
+                                <option label="포켓게임스 슬롯" value="string:1125">포켓게임스 슬롯</option>
+                                <option label="리얼타임게이밍 슬롯" value="string:1079">리얼타임게이밍 슬롯</option>
+                                <option label="스카이윈드 슬롯" value="string:1105">스카이윈드 슬롯</option>
+                                <option label="스페이드게이밍 슬롯" value="string:1080">스페이드게이밍 슬롯</option>
+                                <option label="탑트렌드게이밍 슬롯" value="string:1098">탑트렌드게이밍 슬롯</option>
+                                <option label="드림테크 슬롯" value="string:1008">드림테크 슬롯</option>
+                                <option label="벳소프트 슬롯" value="string:1034">벳소프트 슬롯</option>
+                                <option label="퀵스핀 슬롯" value="string:1124">퀵스핀 슬롯</option>
+                                <option label="레드레이크 슬롯" value="string:1134">레드레이크 슬롯</option>
+                                <option label="플레이손 슬롯" value="string:1132">플레이손 슬롯</option>
+                                <option label="블루프린트 슬롯" value="string:1136">블루프린트 슬롯</option>
+                                <option label="에보플레이 슬롯" value="string:1140">에보플레이 슬롯</option>
+                                <option label="드래곤게이밍 슬롯" value="string:1146">드래곤게이밍 슬롯</option>
+                                <option label="톰혼 슬롯" value="string:1150">톰혼 슬롯</option>
+                                <option label="만칼라게이밍 슬롯" value="string:1152">만칼라게이밍 슬롯</option>
+                                <option label="아메바 슬롯" value="string:1099">아메바 슬롯</option>
+                            </optgroup>
+                            <optgroup label="스포츠베팅">
+                                <option label="10BET 스포츠" value="string:1044">10BET 스포츠</option>
+                                <option label="PINNACLE 스포츠" value="string:1060">PINNACLE 스포츠</option>
+                                <option label="SBO BET 스포츠" value="string:1096">SBO BET 스포츠</option>
+                                <option label="IBC 스포츠" value="string:1091">IBC 스포츠</option>
+                                <option label="BETCONSTRUCT 스포츠" value="string:1106">BETCONSTRUCT 스포츠</option>
+                                <option label="IGK BET 스포츠" value="string:1095">IGK BET 스포츠</option>
+                                <option label="UG 스포츠" value="string:1056">UG 스포츠</option>
+                            </optgroup>
+                            <optgroup label="미니 게임">
+                                <option label="부스타빗 그래프" value="string:1142">부스타빗 그래프</option>
+                                <option label="스카이시티 미니" value="string:1073">스카이시티 미니</option>
+                                <option label="게임플레이 사다리" value="string:1006">게임플레이 사다리</option>
+                                <option label="게임플레이 가위바위보" value="string:1004">게임플레이 가위바위보</option>
+                                <option label="V2G 골든레이스" value="string:1145">V2G 골든레이스</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>이동할 금액</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <div class="flex gap-1 mb-2">
+                            <div class="input-1 flex items-center gap-2 mr-0">
+                                <input class="w-full text-right text-white bg-transparent" type="text" value="0">
+                                <label>원</label>
+                            </div>
+                            <button class="bg-white/50 p-2 px-4">Clear</button>
+                        </div>
+                        <div class="grid grid-cols-5 gap-1 text-sm mb-1">
+                            <button class="py-3 bg-red-600">1만원</button>
+                            <button class="py-3 bg-red-600">5만원</button>
+                            <button class="py-3 bg-red-600">10만원</button>
+                            <button class="py-3 bg-red-600">50만원</button>
+                            <button class="py-3 bg-red-600">100만원</button>
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>이동 후 게임 선택</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <select class="input-1 text-white">
+                            <option selected="selected" value="" class="">게임을 선택해주세요</option>
+                            <optgroup label="카지노 게임">
+                                <option label="에볼루션 라이브" value="string:1058">에볼루션 라이브</option>
+                                <option label="프라그마틱플레이 라이브" value="string:1118">프라그마틱플레이 라이브</option>
+                                <option label="섹시게이밍 라이브" value="string:1147">섹시게이밍 라이브</option>
+                                <option label="올벳 라이브" value="string:1051">올벳 라이브</option>
+                                <option label="WM게이밍 라이브" value="string:1045">WM게이밍 라이브</option>
+                                <option label="빅게이밍 라이브" value="string:1114">빅게이밍 라이브</option>
+                                <option label="오리엔탈게이밍 라이브" value="string:1023">오리엔탈게이밍 라이브</option>
+                                <option label="마이크로게이밍 라이브&amp;슬롯" value="string:1112">마이크로게이밍 라이브&amp;슬롯</option>
+                                <option label="아시아게이밍 라이브&amp;슬롯" value="string:1012">아시아게이밍 라이브&amp;슬롯</option>
+                                <option label="플레이테크 라이브&amp;슬롯" value="string:1047">플레이테크 라이브&amp;슬롯</option>
+                                <option label="게임플레이 라이브&amp;슬롯" value="string:1027">게임플레이 라이브&amp;슬롯</option>
+                                <option label="비비아이엔 라이브 &amp; 슬롯" value="string:1052">비비아이엔 라이브 &amp; 슬롯</option>
+                            </optgroup>
+                            <optgroup label="슬롯 게임">
+                                <option label="프라그마틱플레이 슬롯" value="string:1065">프라그마틱플레이 슬롯</option>
+                                <option label="넷엔트 슬롯" value="string:1123">넷엔트 슬롯</option>
+                                <option label="플레이앤고 슬롯" value="string:1156">플레이앤고 슬롯</option>
+                                <option label="하바네로 슬롯" value="string:1066">하바네로 슬롯</option>
+                                <option label="이그드라실 슬롯" value="string:1104">이그드라실 슬롯</option>
+                                <option label="레드타이거 슬롯" value="string:1149">레드타이거 슬롯</option>
+                                <option label="부운고 슬롯" value="string:1111">부운고 슬롯</option>
+                                <option label="씨큐나인게이밍 슬롯" value="string:1138">씨큐나인게이밍 슬롯</option>
+                                <option label="포켓게임스 슬롯" value="string:1125">포켓게임스 슬롯</option>
+                                <option label="리얼타임게이밍 슬롯" value="string:1079">리얼타임게이밍 슬롯</option>
+                                <option label="스카이윈드 슬롯" value="string:1105">스카이윈드 슬롯</option>
+                                <option label="스페이드게이밍 슬롯" value="string:1080">스페이드게이밍 슬롯</option>
+                                <option label="탑트렌드게이밍 슬롯" value="string:1098">탑트렌드게이밍 슬롯</option>
+                                <option label="드림테크 슬롯" value="string:1008">드림테크 슬롯</option>
+                                <option label="벳소프트 슬롯" value="string:1034">벳소프트 슬롯</option>
+                                <option label="퀵스핀 슬롯" value="string:1124">퀵스핀 슬롯</option>
+                                <option label="레드레이크 슬롯" value="string:1134">레드레이크 슬롯</option>
+                                <option label="플레이손 슬롯" value="string:1132">플레이손 슬롯</option>
+                                <option label="블루프린트 슬롯" value="string:1136">블루프린트 슬롯</option>
+                                <option label="에보플레이 슬롯" value="string:1140">에보플레이 슬롯</option>
+                                <option label="드래곤게이밍 슬롯" value="string:1146">드래곤게이밍 슬롯</option>
+                                <option label="톰혼 슬롯" value="string:1150">톰혼 슬롯</option>
+                                <option label="만칼라게이밍 슬롯" value="string:1152">만칼라게이밍 슬롯</option>
+                                <option label="아메바 슬롯" value="string:1099">아메바 슬롯</option>
+                            </optgroup>
+                            <optgroup label="스포츠베팅">
+                                <option label="10BET 스포츠" value="string:1044">10BET 스포츠</option>
+                                <option label="PINNACLE 스포츠" value="string:1060">PINNACLE 스포츠</option>
+                                <option label="SBO BET 스포츠" value="string:1096">SBO BET 스포츠</option>
+                                <option label="IBC 스포츠" value="string:1091">IBC 스포츠</option>
+                                <option label="BETCONSTRUCT 스포츠" value="string:1106">BETCONSTRUCT 스포츠</option>
+                                <option label="IGK BET 스포츠" value="string:1095">IGK BET 스포츠</option>
+                                <option label="UG 스포츠" value="string:1056">UG 스포츠</option>
+                            </optgroup>
+                            <optgroup label="미니 게임">
+                                <option label="부스타빗 그래프" value="string:1142">부스타빗 그래프</option>
+                                <option label="스카이시티 미니" value="string:1073">스카이시티 미니</option>
+                                <option label="게임플레이 사다리" value="string:1006">게임플레이 사다리</option>
+                                <option label="게임플레이 가위바위보" value="string:1004">게임플레이 가위바위보</option>
+                                <option label="V2G 골든레이스" value="string:1145">V2G 골든레이스</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <button class="game-button w-full">입금신청</button>
+                </div>
+            </div>
+        </div>
+        <!-- MONEY MOVE DIALOG -->
+
+        <!-- BONUS DIALOG -->
+        <div class="BONUS_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">콤프보너스</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="p-4 font-bold">
+                    <div class="p-2 odd:bg-theme-2/80 even:bg-theme-2/20 text-center">잔여 보너스</div>
+                    <div class="p-2 odd:bg-theme-2/80 even:bg-theme-2/20 text-center">0</div>
+                    <div class="p-2 odd:bg-theme-2/80 even:bg-theme-2/20 text-center">사용한 보너스</div>
+                    <div class="p-2 odd:bg-theme-2/80 even:bg-theme-2/20 text-center">0</div>
+                    <div class="p-2 odd:bg-theme-2/80 even:bg-theme-2/20 text-center">총 보너스</div>
+                    <div class="p-2 odd:bg-theme-2/80 even:bg-theme-2/20 text-center mb-5">0</div>
+
+                    <div class="input-wrapper mb-4">
+                        <select class="input-1 text-white">
+                            <option selected="selected" value="" class="">게임을 선택해주세요</option>
+                            <optgroup label="카지노 게임">
+                                <option label="에볼루션 라이브" value="string:1058">에볼루션 라이브</option>
+                                <option label="프라그마틱플레이 라이브" value="string:1118">프라그마틱플레이 라이브</option>
+                                <option label="섹시게이밍 라이브" value="string:1147">섹시게이밍 라이브</option>
+                                <option label="올벳 라이브" value="string:1051">올벳 라이브</option>
+                                <option label="WM게이밍 라이브" value="string:1045">WM게이밍 라이브</option>
+                                <option label="빅게이밍 라이브" value="string:1114">빅게이밍 라이브</option>
+                                <option label="오리엔탈게이밍 라이브" value="string:1023">오리엔탈게이밍 라이브</option>
+                                <option label="마이크로게이밍 라이브&amp;슬롯" value="string:1112">마이크로게이밍 라이브&amp;슬롯</option>
+                                <option label="아시아게이밍 라이브&amp;슬롯" value="string:1012">아시아게이밍 라이브&amp;슬롯</option>
+                                <option label="플레이테크 라이브&amp;슬롯" value="string:1047">플레이테크 라이브&amp;슬롯</option>
+                                <option label="게임플레이 라이브&amp;슬롯" value="string:1027">게임플레이 라이브&amp;슬롯</option>
+                                <option label="비비아이엔 라이브 &amp; 슬롯" value="string:1052">비비아이엔 라이브 &amp; 슬롯</option>
+                            </optgroup>
+                            <optgroup label="슬롯 게임">
+                                <option label="프라그마틱플레이 슬롯" value="string:1065">프라그마틱플레이 슬롯</option>
+                                <option label="넷엔트 슬롯" value="string:1123">넷엔트 슬롯</option>
+                                <option label="플레이앤고 슬롯" value="string:1156">플레이앤고 슬롯</option>
+                                <option label="하바네로 슬롯" value="string:1066">하바네로 슬롯</option>
+                                <option label="이그드라실 슬롯" value="string:1104">이그드라실 슬롯</option>
+                                <option label="레드타이거 슬롯" value="string:1149">레드타이거 슬롯</option>
+                                <option label="부운고 슬롯" value="string:1111">부운고 슬롯</option>
+                                <option label="씨큐나인게이밍 슬롯" value="string:1138">씨큐나인게이밍 슬롯</option>
+                                <option label="포켓게임스 슬롯" value="string:1125">포켓게임스 슬롯</option>
+                                <option label="리얼타임게이밍 슬롯" value="string:1079">리얼타임게이밍 슬롯</option>
+                                <option label="스카이윈드 슬롯" value="string:1105">스카이윈드 슬롯</option>
+                                <option label="스페이드게이밍 슬롯" value="string:1080">스페이드게이밍 슬롯</option>
+                                <option label="탑트렌드게이밍 슬롯" value="string:1098">탑트렌드게이밍 슬롯</option>
+                                <option label="드림테크 슬롯" value="string:1008">드림테크 슬롯</option>
+                                <option label="벳소프트 슬롯" value="string:1034">벳소프트 슬롯</option>
+                                <option label="퀵스핀 슬롯" value="string:1124">퀵스핀 슬롯</option>
+                                <option label="레드레이크 슬롯" value="string:1134">레드레이크 슬롯</option>
+                                <option label="플레이손 슬롯" value="string:1132">플레이손 슬롯</option>
+                                <option label="블루프린트 슬롯" value="string:1136">블루프린트 슬롯</option>
+                                <option label="에보플레이 슬롯" value="string:1140">에보플레이 슬롯</option>
+                                <option label="드래곤게이밍 슬롯" value="string:1146">드래곤게이밍 슬롯</option>
+                                <option label="톰혼 슬롯" value="string:1150">톰혼 슬롯</option>
+                                <option label="만칼라게이밍 슬롯" value="string:1152">만칼라게이밍 슬롯</option>
+                                <option label="아메바 슬롯" value="string:1099">아메바 슬롯</option>
+                            </optgroup>
+                            <optgroup label="스포츠베팅">
+                                <option label="10BET 스포츠" value="string:1044">10BET 스포츠</option>
+                                <option label="PINNACLE 스포츠" value="string:1060">PINNACLE 스포츠</option>
+                                <option label="SBO BET 스포츠" value="string:1096">SBO BET 스포츠</option>
+                                <option label="IBC 스포츠" value="string:1091">IBC 스포츠</option>
+                                <option label="BETCONSTRUCT 스포츠" value="string:1106">BETCONSTRUCT 스포츠</option>
+                                <option label="IGK BET 스포츠" value="string:1095">IGK BET 스포츠</option>
+                                <option label="UG 스포츠" value="string:1056">UG 스포츠</option>
+                            </optgroup>
+                            <optgroup label="미니 게임">
+                                <option label="부스타빗 그래프" value="string:1142">부스타빗 그래프</option>
+                                <option label="스카이시티 미니" value="string:1073">스카이시티 미니</option>
+                                <option label="게임플레이 사다리" value="string:1006">게임플레이 사다리</option>
+                                <option label="게임플레이 가위바위보" value="string:1004">게임플레이 가위바위보</option>
+                                <option label="V2G 골든레이스" value="string:1145">V2G 골든레이스</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <div class="input-1 flex items-center gap-2 mr-0">
+                            <input class="w-full text-right text-white bg-transparent" type="text" value="0">
+                            <label>원</label>
+                        </div>
+                    </div>
+
+                    <button class="game-button w-full mb-4">입금신청</button>
+
+
+                    <div class="mb-4 border-t border-white/50 py-2 text-center">
+                        <p>유저 콤프 적립현황</p>
+                        <div class="content_dialog_page mt-5">
+                            <ul>
+                                <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                                <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                                <li class="active">1</li>
+                                <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                                <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 border-t border-white/50 py-2 text-center">
+                        <p>친구 콤프 적립현황</p>
+                        <div class="content_dialog_page mt-5">
+                            <ul>
+                                <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                                <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                                <li class="active">1</li>
+                                <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                                <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- BONUS DIALOG -->
+
+        <!-- FRIEND DIALOG -->
+        <div class="FRIEND_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">친구 목록</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="p-4 font-bold">
+                    <div class="bg-theme-2 p-4">
+                        <p>번호 : 1</p>
+                        <p>아이디 :</p>
+                        <p>가입일 :</p>
+                    </div>
+
+                    <div class="content_dialog_page mt-5">
+                        <ul>
+                            <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                            <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                            <li class="active">1</li>
+                            <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                            <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- FRIEND DIALOG -->
+
+        <!-- COUPON DIALOG -->
+        <div class="COUPON_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">쿠폰 내역</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="content_dialog_page mt-5">
+                    <ul>
+                        <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                        <li class="active">1</li>
+                        <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- COUPON DIALOG -->
+
+        <!-- HISTORY DIALOG -->
+        <div class="HISTORY_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">입출금 내역</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="content_dialog_page mt-5">
+                    <ul>
+                        <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                        <li class="active">1</li>
+                        <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- HISTORY DIALOG -->
+
+        <!-- CHANGE PASSWORD DIALOG -->
+        <div class="CHANGE_PASSWORD_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">비밀번호 변경</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="p-4">
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>현재 비밀번호</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+
+                        <input class="w-full input-1" type="text">
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>새로운 비밀번호</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+
+                        <input class="w-full input-1" type="text">
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>새로운 비밀번호 재입력</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+
+                        <input class="w-full input-1" type="text">
+                    </div>
+
+                    <button class="game-button w-full" disabled>비밀번호 변경</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- CHANGE PASSWORD DIALOG -->
+
+
+        <!-- NOTICE DIALOG -->
+        <div class="NOTICE_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">공지사항</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="p-4 text-sm text-white/50">
+                    <div class="content-display text-white mb-4 hidden notice_content" onclick="OpenNoticeContent()">
+                        <div class="p-2 bg-white/20">
+                            <label class="block">라카지노 모든쿠폰 사용규칙안내드립니다</label>
+                            <label class="block">2022-08-13 00:00:00</label>
+                        </div>
+                        <div class="bg-theme-2 p-4">
+                            <p class="mb-2">안녕하세요 라카지노 고객센터입니다</p>
+                            <p>1. 지급 받으신 모든 종류의 쿠폰은 [입금하신 금액]과 동시에 섞어 사용하실 수 없음을 안내드립니다.!!</p>
+                            <p class="mb-2">대상쿠폰 : 신규가입쿠폰, 일간루징쿠폰, 주간루징쿠폰 , vip 및 일반 서비스쿠폰 등</p>
+                            <p class="mb-2">2. 무료 / 이벤트 쿠폰을 사용하시고 조건에 맞는 출금을 하신 후에는 남아있는 보유머니 금액에 관하여 100% 모두 자동 회수 처리가
+                                됨을 안내드립니다.</p>
+                            <p>3. 쿠폰 종류 및 조건</p>
+                            <div class="pl-2 mb-2">
+                                <p>1. 신규 가입쿠폰 ▶️ 롤링 300% / 10만원 달성시 10만원 출금가능</p>
+                                <p>2. 첫입금 올인쿠폰 ▶️ 롤링 500% / 최대출금 10배</p>
+                                <p>3. 첫입금 감사쿠폰 ▶️ 롤링 300% / 최대출금 10배</p>
+                                <p>4. 일반 영업쿠폰 ▶️ 롤링 300% / 최대출금 5배</p>
+                                <p>5. VIP 감사쿠폰 ▶️ 롤링 300% / 최대출금 10배</p>
+                                <p>6. 일일 루징쿠폰 ▶️ 롤링 300% / 최대출금 10배</p>
+                                <p>7. 주간 루징쿠폰 ▶️ 롤링 300% / 최대출금 10배</p>
+                                <p>8. 10만원 달성쿠폰 ▶️ 10만원 달성시 10만원까지출금가능</p>
+                                <p>(해당쿠폰은 합계사용 절대 불가능하십니다.)</p>
+                            </div>
+                            <p>모든 종류의 쿠폰은 절대로!!</p>
+                            <p>입금하신 보유머니와 함께 동시에 섞어 사용하시면 안됩니다.</p>
+                            <p class="mb-2">혹여 이렇게 안내를 드렷는데도 쿠폰과 보유머니를 함께 사용 하실 경우에</p>
+
+                            <p>사용하신 쿠폰 금액에 맞게 회원님의 보유금액에서 먼저 차감을 한후에 출금이 됨을 안내드립니다.!!</p>
+                            <p>또한, 적발이 되신분은 각종 이벤트 및 일간루징쿠폰 / 주간루징쿠폰 발급 대상에서 제외됨을 알려드립니다.</p>
+                            <p class="mb-2">이 점 유의 부탁드리며 규정 준수해주시길 부탁드립니다.</p>
+                            <p class="mb-1">*합계시 롤링은 높은퍼센트, 최대출금액은 낮은금액 따라가십니다. 유의하시고 불이익가지 않는 게임 부탁드립니다.</p>
+                            <p class="mb-2">언제나 최고의 서비스로 보답하는 라카지노가 되겠습니다. 감사합니다</p>
+                            <p class="text-xs">08-13 00:00:00</p>
+                        </div>
+                    </div>
+                    <div onclick="OpenNoticeContent()" class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">라카지노 모든쿠폰 사용규칙안내드립니다</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div onclick="OpenNoticeContent()" class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">라카지노 루징쿠폰 사용규칙안내드립니다</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div onclick="OpenNoticeContent()" class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">라카지노는 전체등급 배팅제한금액없이 이용하실 수 있습니다</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div onclick="OpenNoticeContent()" class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">라카지노 출금규칙 안내드립니다</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div onclick="OpenNoticeContent()" class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">라카지노 양방강경대응 [마이크로 게임사 입금보너스 미지급] 안내드립니다</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div onclick="OpenNoticeContent()" class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">라카지노 각 게임사 이용금지게임 안내드립니다</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_dialog_page mt-5">
+                    <ul>
+                        <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                        <li class="active">1</li>
+                        <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- NOTICE DIALOG -->
+
+        <!-- EVENT DIALOG -->
+        <div class="EVENT_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">이벤트 / 프로모션</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="p-4 text-sm text-white/50">
+                    <div class="content-display text-white mb-4 hidden event_content" onclick="OpenEventContent()">
+                        <div class="p-2 bg-white/20">
+                            <label class="block">2023년 총상금 33억 파라오계열 토너먼트 안내</label>
+                            <label class="block">2022-08-13 00:00:00</label>
+                        </div>
+                        <div class="bg-theme-2 p-4">
+                            <p class="mb-2">
+                                <2023년 파라오계열 총상금 33억 토너먼트>
+                            </p>
+                            <p class="mb-2">*개요 및 진행일정</p>
+                            <p>파라오계열만이 진행할 수있는 매 년 늘어나는 상금 토너먼트 !!</p>
+                            <p class="mb-2">파라오계열 총상금 33억 토너먼트는 세가지 구간으로 나누어진행됩니다.</p>
+                            <p>- 3000만원 상금 주간 토너먼트 (월요일 - 일요일 / 월간토너먼트, 분기별 토너먼트 진행주에는 시상진행하지않습니다.)</p>
+                            <p>- 1억원 상금 월간 토너먼트 (매월1일 - 매월말일 / 분기별 토너먼트 진행월(3,6,9,12월)에는 시상진행하지않습니다.)</p>
+                            <p class="mb-2">- 3억원 상금 분기별 토너먼트 (4분기로 나누어 각분기별 / 1월 ~ 3월, 4월 ~ 6월, 7월 ~ 9월, 10월 ~ 12월)</p>
+                            <p class="mb-5">*월간 및 분기별토너로 인하여, 시상되지않는 토너먼트 안내</p>
+                            <p>2월</p>
+                            <p class="mb-2">20~26일 주간토너 시상X (2월 월간 토너로 대체)</p>
+                            <p>3월</p>
+                            <p>20~26일 주간토너 시상X(3월 분기 토너로 대체)</p>
+                            <p class="mb-2">3월 월간토너 시상X(3월 분기 토너로 대체)</p>
+
+                            <p>4월</p>
+                            <p class="mb-2">24~30일 주간토너 시상X (4월 월간 토너로 대체)</p>
+
+                            <p>5월</p>
+                            <p class="mb-5">22~28일 주간토너 시상X (5월 월간 토너로 대체)</p>
+
+                            <p>*주의사항</p>
+                            <p>- 파라오계열 슈퍼토너먼트는 슬롯 프리스핀 선구매, 식보 대소홀짝 지능성 양방 등으로 적발될 시, 악용 및 부정참여에 대하여 본사에서 적발시 일방적으로 시상취소
+                                및 참여자격을 박탈할 수 있습니다.</p>
+                            <p>- 파라오계열 슈퍼토너먼트는 슬롯 프리스핀 선구매, 식보 대소홀짝 지능성 양방 등으로 적발될 시, 악용 및 부정참여에 대하여 본사에서 적발시 일방적으로 시상취소
+                                및 참여자격을 박탈할 수 있습니다. </p>
+                            <p>- 파라오계열 슈퍼토너먼트는 본사의 사정에 따라 일정이 변경되거나 취소될 수 있으며, 이에 인한 불이익은 본사에서 책임지지 않습니다.</p>
+                            <p>*추후 참여가능 사이트는 추가 될 수 있으며, 추가 될 경우 공지드리겠습니다.</p>
+                            <p class="mb-2">- 파라오계열 금지게임 이외의 모든게임 참여 가능하시며 금지게임을 이용하실 경우 참여자격 박탈 혹은 순위조정 진행되실 수 있으십니다.
+                            </p>
+
+                            <p>각토너먼트 일자별결과, 최종순위 확인가능한 슬롯킹 커뮤니티 게시판링크: https://sslotking.com/</p>
+                            <p class="text-xs">2023-01-06 00:00:00</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2" onclick="OpenEventContent()">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">파라오계열 설연휴 이벤트안내 (1월 21일 ~ 1월 24일)</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2" onclick="OpenEventContent()">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">2023년 총상금 33억 파라오계열 토너먼트 - 분기별 토너먼트 [총상금 3억원]</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2" onclick="OpenEventContent()">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">2023년 총상금 33억 파라오계열 토너먼트 - 월간토너먼트 [총상금 1억원]</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2" onclick="OpenEventContent()">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">2023년 총상금 33억 파라오계열 토너먼트 - 주간토너먼트 [총상금 3천만원]</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2" onclick="OpenEventContent()">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">2023년 총상금 33억 파라오계열 토너먼트 안내</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-5 odd:bg-theme-2/20 even:bg-theme-2" onclick="OpenEventContent()">
+                        <div class="p-3 col-span-4">
+                            <label class="elip">라카지노 모든 이벤트, 롤링규정 안내드립니다</label>
+                        </div>
+                        <div class="p-3 col-span-1">
+                            <label>2022-08-13</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_dialog_page mt-5">
+                    <ul>
+                        <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                        <li class="active">1</li>
+                        <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- EVENT DIALOG -->
+
+        <!-- INQUIRY DIALOG -->
+        <div class="INQUIRY_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">1:1 문의</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="write_inquiry p-4 hidden">
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>제목</span>
+                            <span class="text-red-500">*</span>
+                        </label>
+
+                        <input class="w-full input-1" type="text">
+                    </div>
+                    <div class="input-wrapper mb-4">
+                        <label class="mb-2 block">
+                            <span>내용</span>
+                        </label>
+
+                        <textarea class="w-full input-1 py-2 h-20" type="text"
+                            placeholder="내용은 1000자 이하로 입력해주세요"></textarea>
+                    </div>
+
+                    <button class="game-button w-full">작성완료</button>
+                </div>
+                <div class="inquiry_lists ">
+                    <div class="content_dialog_page my-5">
+                        <ul>
+                            <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                            <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                            <li class="active">1</li>
+                            <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                            <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                        </ul>
+                    </div>
+
+                    <div class="px-4">
+                        <button onclick="WriteInquiry()" class="game-button w-full">1:1 문의</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- INQUIRY DIALOG -->
+
+        <!-- NOTE DIALOG -->
+        <div class="NOTE_DIALOG text-white z-20 hidden">
+            <div class="h-screen w-full fixed left-0 top-0 bg-theme-1 z-10 overflow-y-scroll pb-10">
+                <div
+                    class="flex items-center justify-center relative text-white bg-theme-2 h-16 top-0 sticky z-30 border-b border-theme-3">
+                    <h2 class="font-bold">쪽지함</h2>
+                    <button class="absolute right-5 py-5" onclick="CloseAllDialog()">
+                        <img class="w-6" src="./assets/images/icons/close.svg" alt="">
+                    </button>
+                </div>
+
+
+                <div class="p-4">
+                    <div class="bg-theme-2 p-4">
+                        <p>제목 : <span class="text-white/50">금일 라 카지노 전체 점검 공지드립니다</span></p>
+                        <p>발신 일시 : <span class="text-white/50">2023-02-06 06:19:39</span></p>
+                        <p>수신 일시 :</p>
+                    </div>
+                </div>
+
+                <div class="content_dialog_page mt-5">
+                    <ul>
+                        <li><img class="w-4" src="./assets/images/icons/prev-start.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/prev.svg" alt=""></li>
+                        <li class="active">1</li>
+                        <li><img class="w-4" src="./assets/images/icons/next.svg" alt=""></li>
+                        <li><img class="w-4" src="./assets/images/icons/next-last.svg" alt=""></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- NOTE DIALOG -->
 
 
 </body>
