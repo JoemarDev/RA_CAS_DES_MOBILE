@@ -373,6 +373,6 @@ label.title:hover {
 }
 
 .account-bar {
-    right: 0;
+    right: -100%;
     transition: all 0.2s;
 }
