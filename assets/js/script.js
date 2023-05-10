@@ -1,4 +1,4 @@
-let isLogin = false;
+let isLogin = true;
 
 
 const Init = () => {
@@ -119,13 +119,13 @@ const MemberLogout = () => {
 }
 
 const ToogleGameTab = (val) => {
-    $('body').css("overflowY", "hidden");
-    $('.GAME_DIALOG').hide();
+    // $('body').css("overflowY", "hidden");
+    // $('.GAME_DIALOG').hide();
 
-    if (val === 1) $(".live-box").show()
-    if (val === 2) $(".slot-box").show()
-    if (val === 3) $(".sports-box").show()
-    if (val === 4) $(".arcade-box").show()
+    // if (val === 1) $(".live-box").show()
+    // if (val === 2) $(".slot-box").show()
+    // if (val === 3) $(".sports-box").show()
+    // if (val === 4) $(".arcade-box").show()
 
 }
 
@@ -188,11 +188,33 @@ const ToogleTransactionLists = (val) => {
 
 }
 
-let DefaultValue = 50_269_923_500.01
+let DefaultValue = 5_026_992_350
 
 setInterval(() => {
-    DefaultValue += Math.floor(Math.random() * 50);
+    DefaultValue += Math.floor(Math.random() * 100 + 50);
     $('#odometer').html(DefaultValue)
 }, 4000)
 
 Init()
+
+
+const OpenSidebar = () => {
+    $('body').css('overflow', 'hidden');
+    $('.sidebar').css('left', '0');
+}
+
+const CloseSidebar = () => {
+    $('body').css('overflowY', 'scroll');
+    $('.sidebar').css('left', '-100%')
+}
+
+
+const OpenAccountBar = () => {
+    $('body').css('overflow', 'hidden');
+    $('.account-bar').css('right', '0');
+}
+
+const CloseAccountBar = () => {
+    $('body').css('overflowY', 'scroll');
+    $('.account-bar').css('right', '-100%')
+}

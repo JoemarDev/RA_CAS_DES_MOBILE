@@ -99,7 +99,7 @@ select:focus {
 
 
 .banner {
-    background: url('../images/banner/banner.jpg') center no-repeat;
+    background: linear-gradient(0deg, rgba(19, 19, 19, 1), rgba(100, 98, 99, 0.1), #131313), url('../new_images/banner/1.png') center no-repeat;
     background-size: 100%;
     min-height: 384px;
     width: 100%;
@@ -326,4 +326,53 @@ label.title:hover {
     text-overflow: ellipsis;
     overflow: hidden;
     width: 100%;
+}
+
+
+/* NEW CSS */
+.one-notice {
+    color: #b5b5b5;
+    font-size: 12px;
+    padding: 0 10px;
+    background: #221c14;
+    font-weight: 600;
+}
+
+.one-notice .notice-cont {
+    overflow: hidden;
+}
+
+.one-notice .notice {
+    width: 30px;
+    line-height: 39px;
+    display: inline-block;
+    color: #fff;
+    vertical-align: middle;
+    font-size: 12px;
+    text-align: center;
+}
+
+.one-notice .notice img {
+    position: relative;
+    top: 2px;
+}
+
+.one-notice marquee {
+    width: calc(100% - 35px);
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 12px;
+    z-index: 0;
+}
+
+
+.sidebar {
+    left: -100%;
+    transition: all 0.2s;
+}
+
+.account-bar {
+    right: 0;
+    transition: all 0.2s;
 }
