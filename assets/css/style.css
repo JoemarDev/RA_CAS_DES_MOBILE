@@ -368,7 +368,7 @@ label.title:hover {
 
 
 .sidebar {
-    left: -100%;
+    left: 100%;
     transition: all 0.2s;
 }
 

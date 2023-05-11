@@ -218,3 +218,36 @@ const CloseAccountBar = () => {
     $('body').css('overflowY', 'scroll');
     $('.account-bar').css('right', '-100%')
 }
+
+$('.logo-container').click(() => {
+    GoToHome();
+});
+
+
+$('.casino-lists-menu').click(function () {
+    $(this).addClass("border-theme-3")
+    $(this).addClass("text-theme-3")
+    $(this).removeClass("border-theme-4")
+    $('.slot-lists-menu').addClass("border-theme-4")
+    $('.slot-lists-menu').removeClass("border-theme-3")
+    $('.slot-lists-menu').removeClass("text-theme-3")
+    $('.casino-sidebar-content').show();
+    $('.slot-sidebar-content').hide();
+})
+
+$('.slot-lists-menu').click(function () {
+    $(this).addClass("border-theme-3")
+    $(this).addClass("text-theme-3")
+    $(this).removeClass("border-theme-4")
+    $('.casino-lists-menu').addClass("border-theme-4")
+    $('.casino-lists-menu').removeClass("border-theme-3")
+    $('.casino-lists-menu').removeClass("text-theme-3")
+    $('.casino-sidebar-content').hide();
+    $('.slot-sidebar-content').show();
+})
+
+const GoToCasino = () => window.location.href = "casino.html";
+
+const GoToHome = () => window.location.href = "index.html";
+
+const GotToSlot = () => window.location.href = "slot.html";
