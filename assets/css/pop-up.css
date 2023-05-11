@@ -15,7 +15,7 @@
     left: 50%;
     top: 50%;
     width: 98%;
-    height: 98vh;
+    height: 90vh;
     background: #000;
     border: 1px solid #333;
     z-index: 25;
@@ -40,7 +40,7 @@
     justify-content: space-between;
     height: 60px;
     position: sticky;
-    top: 0;
+    top: -1px;
     background: #000;
     z-index: 50;
 }

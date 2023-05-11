@@ -82,7 +82,7 @@
 .child-flex {
     display: flex;
     align-items: center;
-
+    max-width: 100%;
 }
 
 
@@ -171,6 +171,7 @@
     font-size: 14px;
     color: #ffd273;
     font-weight: 600;
+    max-width: 100%;
 }
 
 

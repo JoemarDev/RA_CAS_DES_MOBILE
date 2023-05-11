@@ -252,9 +252,18 @@ const GoToHome = () => window.location.href = "index.html";
 
 const GotToSlot = () => window.location.href = "slot.html";
 
+var isOpen = false;
 
 const PagePopupHandler = () => {
+    if (isOpen) {
+        isOpen = false;
+        $('body').css('overflowY', 'scroll');
+    }
 
+    if (!isOpen) {
+        isOpen = true;
+        $('body').css('overflow', 'hidden')
+    }
     $('.money-transfer').toggle();
 }
 
