@@ -181,21 +181,15 @@
 }
 
 .submit-deposit {
-    width: 184px;
-    height: 40px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    background: #03a9f4;
-    border-radius: 33px;
-    box-shadow: 3px 3px 1px #0c2e3d;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+    border: 1px solid #e1ca84;
+    background: #1e170f !important;
+    color: #e1ca84;
+
+    height: 2.5rem;
+    width: 300px;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 5px;
 
 }
 

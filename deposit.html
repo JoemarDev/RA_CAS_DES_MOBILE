@@ -115,127 +115,108 @@
         </div>
         <!-- Member Navigation -->
 
-        <div class="pt-2 px-2">
-            <div onclick="PagePopupHandler()" class=" border border-theme-3 rounded" style="padding : 2px">
-                <div class="game-button flex items-center w-full justify-center rounded">카지노 머니전환</div>
-            </div>
-
-        </div>
-
 
         <!-- Navigation Section -->
 
+        <div class="app-tabs w-full mt-2">
+            <div class="app-child-tabs active" onclick="window.location='deposit.html'">충전신청</div>
+            <div class="app-child-tabs" onclick="window.location='withdraw.html'">환전신청</div>
+            <div class="app-child-tabs" onclick="window.location='point-history.html'">포인트전환</div>
+        </div>
+
         <!-- Game Container Section -->
-        <div class="game-container grid grid-cols-2 gap-2 p-2">
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/1.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">에볼루션</h5>
-                    <button class="game-button">게임 시작하기</button>
+        <div class=" p-2">
+            <!-- Transaction Help Box -->
+            <div class="p-5 rounded bg-stone-900 text-white border border-stone-700 mb-2">
+                <div class="flex items-center gap-1">
+
+                    <h2 class="text-theme-3 font-semibold text-normal mb-2">필독/주의사항</h2>
+                </div>
+
+                <div class="pl-0  leading-8 text-xs">
+                    <p class="font-normal"><span class="text-theme-3">①</span> 입금하실 계좌에 PC 뱅킹, 폰뱅킹, 무통장 입금, ATM등의 입금 방법중
+                        하나를 선택하여</p>
+                    <p class="font-normal"><span class="text-theme-3">②</span> 입금하신 금액과 동일한 금액을 체크하세요.</p>
+                    <p class="font-normal"><span class="text-theme-3">③</span> 입금자명에는 입금하신 분의 성함을 넣어 주세요.</p>
+                    <p class="font-normal"><span class="text-theme-3">④</span> 신청 버튼을 클릭하시면 충전이 완료됩니다.</p>
+                    <p class="font-normal"><span class="text-theme-3">⑤</span> 수표 입금시 충전처리가 되지않으며, 혹시 입금을 하셨을 경우 바로 환전이
+                        불가합니다.</p>
+                    <p class="font-normal">운영진측에서 정상적인 수표 확인이된 후에 환전을 해드리도록 하겠습니다.</p>
+
+
                 </div>
             </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/2.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">마이크로게이밍</h5>
-                    <button class="game-button">게임 시작하기</button>
+            <!-- Transaction Help Box -->
+
+            <!-- Transaction Box -->
+            <div class="p-5 rounded bg-stone-900 text-white border border-stone-700 mb-2 font-sm">
+
+
+                <div class="transaction-inner-section">
+                    <p class="text-sm mb-2">입금자명</p>
+                    <div class="child-flex gap-1 mb-1">
+                        <input type="text" id="IC_Amount_2" placeholder="test01">
+                    </div>
+                    <p class="text-gray-500 text-xs">* 입금자 이름이 틀리면 입금확인 을 할 수가 없으니 주의하세요!</p>
                 </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/3.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">아시아게이밍</h5>
-                    <button class="game-button">게임 시작하기</button>
+
+                <div class="transaction-inner-section">
+                    <p class="text-sm">보유머니</p>
+                    <p class="value"><strong class="text-theme-3">31,000 </strong> 원</p>
                 </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/4.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">플레이테크</h5>
-                    <button class="game-button">게임 시작하기</button>
+
+                <div class="transaction-inner-section">
+                    <p class="text-sm mb-2">입금신청금액</p>
+                    <div class="child-flex mb-1">
+                        <label class="input-tras-wrapper"><input type="text" id="IC_Amount" placeholder="0"> 원</label>
+                        <button type="button" class="trans-button reset" name="revise">정정</button>
+                    </div>
+                    <div class="child-flex gap-1 mb-1">
+                        <button type="button" class="trans-button " name="revise">1천원</button>
+                        <button type="button" class="trans-button " name="revise">1만원</button>
+                        <button type="button" class="trans-button " name="revise">3만원</button>
+                    </div>
+                    <div class="child-flex gap-1 mb-1">
+                        <button type="button" class="trans-button " name="revise">5만원</button>
+                        <button type="button" class="trans-button " name="revise">30만원</button>
+                        <button type="button" class="trans-button " name="revise">50만원</button>
+                    </div>
+                    <div class="child-flex gap-1 mb-1">
+                        <button type="button" class="trans-button " name="revise">100만원 </button>
+                    </div>
+                    <p class="text-red-500 text-xs leading-5">*확인 한 계좌번호로 선입금 후 입금하신 금액을 정확히 입력하고 신청하기 버튼을 눌러주세요</p>
                 </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/5.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">프라그마틱플레이</h5>
-                    <button class="game-button">게임 시작하기</button>
+
+
+                <div class="text-center">
+                    <button class="submit-deposit">
+                        충전신청
+                    </button>
                 </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/6.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">게임플레이</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/7.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">섹시게이밍</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/8.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">올벳</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/9.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">비비아이엔</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/10.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">비보게이밍</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/11.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">비보알라딘</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/12.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">WM게이밍</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/13.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">빅게이밍</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/14.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">오리엔탈게이밍</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/15.jpg" alt="">
-                <div class="game-detail">
-                    <h5 class="game-title">프로비전</h5>
-                    <button class="game-button">게임 시작하기</button>
-                </div>
-            </div>
-            <div class="relative links live">
-                <img class="w-full" src="./assets/new_images/live/button-coming-soon.jpg" alt="">
 
             </div>
+            <div class="p-5 rounded bg-stone-900 text-white border border-stone-700 mb-2 font-sm">
+                <div class="transaction-inner-section" style="border: none;">
+                    <p class="title m-0">◎충전신청내역 </p>
+                </div>
+
+                <table class="trans-history-table">
+                    <thead>
+                        <tr>
+                            <th>신청시간</th>
+                            <th>신청금액</th>
+                            <th>상태</th>
+                            <th>처리시간</th>
+                            <th>삭제</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+
+
+
+
         </div>
         <!-- Game Container Section -->
 
@@ -817,183 +798,6 @@
         </div>
         <!-- ACCOUNT BAR SECTION -->
 
-        <!-- MONEY TRANSFER DIALOG -->
-        <div class="money-transfer hidden">
-            <div class="money-popup-overlay"></div>
-            <div class="pop-up-body">
-                <div class="pop-up-header">
-                    <h3>카지노 머니전환</h3>
-                    <button onclick="PagePopupHandler()" class="popup-close">
-                        <img src="./assets/new_images/icons/close.svg" alt="">
-                    </button>
-                </div>
-                <!-- Page Content -->
-                <div class="app-tabs">
-                    <div class="app-child-tabs active" onclick="PageChildHandler(this,1)">카지노 머니 이동</div>
-                    <div class="app-child-tabs" onclick="PageChildHandler(this,2)">머니전환 내역</div>
-                </div>
-
-                <div class="popup-child-content-1">
-                    <div class="transaction-wrapper">
-
-                        <!-- Transaction Help Box -->
-                        <div class="p-5 rounded bg-stone-900 text-white border border-stone-700 mb-2">
-                            <div class="flex items-center gap-1">
-                                <img class="w-8" src="./assets/new_images/icons/warning.svg" alt="">
-                                <h2 class="text-theme-3 font-semibold text-normal mb-2">필독/주의사항</h2>
-                            </div>
-
-                            <div class="pl-3  leading-8 text-xs">
-                                <p class="font-normal"><span class="text-theme-3">①</span> 에볼루션 = 배팅상한가 1,000만 / 각 테이블
-                                    마다 상이함</p>
-                                <p class="font-normal"><span class="text-theme-3">②</span> 카지노는 게임별 / 테이블별 금액 설정이 다릅니다.
-                                </p>
-                                <p class="font-normal"><span class="text-theme-3">③</span> 입장전에 상한가 선택후 입장 부탁드립니다.</p>
-                                <p class="font-normal"><span class="text-theme-3">④</span> 살롱 프라이빗은 2,500만원 까지 이용가능합니다.
-                                </p>
-
-                            </div>
-                        </div>
-                        <!-- Transaction Help Box -->
-
-
-
-                        <!-- Transaction Box -->
-                        <div class="p-5 rounded bg-stone-900 text-white border border-stone-700 mb-2 font-sm">
-
-                            <div class="transaction-inner-section">
-                                <p class="title text-sm">입금자명</p>
-                                <div class="child-flex">
-                                    <input type="text" id="IC_Amount_2" placeholder="test01">
-                                </div>
-                            </div>
-
-                            <div class="transaction-inner-section">
-                                <p class="title text-sm">보유머니</p>
-                                <p class="value"><strong style="color: #ff009c">31,000 </strong> 원</p>
-                            </div>
-                            <div class="transaction-inner-section">
-                                <p class="title text-sm">라이브카지노 게임머니</p>
-                                <p class="value"><strong style="color: #22ebff">31,000 </strong> 원</p>
-                            </div>
-
-                            <div class="transaction-inner-section">
-                                <p class="title text-sm">머니이동</p>
-                                <div class="child-flex mb-1">
-                                    <label class="input-tras-wrapper"><input type="text" id="IC_Amount" placeholder="0">
-                                        원</label>
-                                    <button type="button" class="trans-button reset" name="revise">정정</button>
-                                </div>
-                                <div class="child-flex gap-1 mb-1">
-                                    <button type="button" class="trans-button " name="revise">1천원</button>
-                                    <button type="button" class="trans-button " name="revise">1만원</button>
-                                    <button type="button" class="trans-button " name="revise">3만원</button>
-                                </div>
-                                <div class="child-flex gap-1 mb-1">
-                                    <button type="button" class="trans-button " name="revise">5만원</button>
-                                    <button type="button" class="trans-button " name="revise">30만원</button>
-                                    <button type="button" class="trans-button " name="revise">50만원</button>
-                                </div>
-                                <div class="child-flex gap-1 mb-1">
-                                    <button type="button" class="trans-button " name="revise">100만원 </button>
-                                </div>
-                                <p class="text-red-500  text-xs help">라이브카지노를 이용하기 위해서는 게임머니 이동이 필요합니다.</p>
-                                <p class="text-red-500  text-xs help">필요하신 금액만 이동하여 게임을 즐겨보세요.</p>
-                                <p class="text-red-500  text-xs help">라이브카지노로 이동한 보유머니는 언제든지 보유머니로 다시 이동할 수 있습니다.</p>
-                            </div>
-
-
-                        </div>
-                        <!-- Transaction Box -->
-                        <!-- Submit Button -->
-                        <div class="text-center">
-                            <button class="transfer-button">
-                                <div class="inner-wrapper">보유머니 -&gt; 라이브카지노 게임머니로 이동</div>
-                            </button>
-                            <button class="transfer-button" style="margin-top: 10px">
-                                <div class="inner-wrapper">라이브카지노 게임머니 -&gt; 보유머니로 이동</div>
-                            </button>
-
-                        </div>
-                        <!-- Submit Button -->
-
-
-                    </div>
-                </div>
-                <div class="popup-child-content-2" style="display: none;">
-
-                    <div class="transaction-wrapper">
-                        <!-- Transaction Box -->
-                        <div class="transaction-box-external  bg-stone-900">
-                            <div class="transaction-inner-section" style="border: none;">
-                                <p class="title m-0">◎ 머니전환 내역</p>
-                            </div>
-
-                            <table class="trans-history-table text-center">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 100px">전환시간</th>
-                                        <th>내용</th>
-                                        <th>금액</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>05/11 05:15 </td>
-                                        <td class="text-theme-3">[보유머니] 카지노 머니로 전환</td>
-                                        <td>500,000 원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>05/11 05:15 </td>
-                                        <td class="text-theme-3">[보유머니] 카지노 머니로 전환</td>
-                                        <td>500,000 원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>05/11 05:15 </td>
-                                        <td class="text-theme-3">[보유머니] 카지노 머니로 전환</td>
-                                        <td>500,000 원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>05/11 05:15 </td>
-                                        <td class="text-theme-3">[보유머니] 카지노 머니로 전환</td>
-                                        <td>500,000 원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>05/11 05:15 </td>
-                                        <td class="text-theme-3">[보유머니] 카지노 머니로 전환</td>
-                                        <td>500,000 원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>05/11 05:15 </td>
-                                        <td class="text-theme-3">[보유머니] 카지노 머니로 전환</td>
-                                        <td>500,000 원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>05/11 05:15 </td>
-                                        <td class="text-theme-3">[보유머니] 카지노 머니로 전환</td>
-                                        <td>500,000 원</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-
-                        <ul class="pagination">
-                            <li><img src="../assets/images/pagination/prev.png" alt=""></li>
-                            <li><img src="../assets/images/pagination/prev-single.png" alt=""></li>
-                            <li class="number active">1</li>
-                            <li class="number">2</li>
-                            <li><img src="../assets/images/pagination/next-single.png" alt=""></li>
-                            <li><img src="../assets/images/pagination/next.png" alt=""></li>
-                        </ul>
-
-                    </div>
-                </div>
-
-                <!-- Page Content -->
-            </div>
-        </div>
-        <!-- MONEY TRANSFER DIALOG -->
 
 
 

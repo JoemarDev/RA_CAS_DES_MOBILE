@@ -72,8 +72,7 @@ const CloseAccountDialog = () => {
 }
 
 const OpenNoticeDialog = () => {
-    if (!isLogin) return OpenLoginDialog()
-    $('.NOTICE_DIALOG').show();
+    window.location.href = "deposit.html"
 }
 
 const OpenNoticeContent = () => {
@@ -81,8 +80,7 @@ const OpenNoticeContent = () => {
 }
 
 const OpenEventDialog = () => {
-    if (!isLogin) return OpenLoginDialog()
-    $('.EVENT_DIALOG').show();
+    window.location.href = "withdraw.html"
 }
 
 const OpenEventContent = () => {
