@@ -251,3 +251,23 @@ const GoToCasino = () => window.location.href = "casino.html";
 const GoToHome = () => window.location.href = "index.html";
 
 const GotToSlot = () => window.location.href = "slot.html";
+
+
+const PagePopupHandler = () => {
+
+    $('.money-transfer').toggle();
+}
+
+const PageChildHandler = (elem, type) => {
+    $('.app-child-tabs').removeClass('active')
+    $(elem).addClass('active');
+
+    if (type == 1) {
+        $('.popup-child-content-1').show();
+        $('.popup-child-content-2').hide();
+    } if (type ==
+        2) {
+        $('.popup-child-content-1').hide();
+        $('.popup-child-content-2').show();
+    }
+}
