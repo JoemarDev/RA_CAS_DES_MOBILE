@@ -267,14 +267,14 @@
 
         <!-- Mobile Navigation Section -->
         <div class="mobile-navigation grid grid-cols-3 text-white text-center text-xs py-2 sticky bottom-0 z-10">
-            <div onclick="OpenNoticeDialog()" class="m border-r border-theme-3/5">
+            <div onclick="GoToDepositPage()" class="m border-r border-theme-3/5">
                 <div class="h-8  flex items-center justify-center">
                     <img class="w-6 mx-auto " src="./assets/new_images/icons/deposit.svg" alt="">
                 </div>
 
                 <p>충전신청</p>
             </div>
-            <div onclick="OpenEventDialog()" class="m border-r border-theme-3/5">
+            <div onclick="GoToWithdrawalPage()" class="m border-r border-theme-3/5">
                 <div class="h-8  flex items-center justify-center">
                     <img class="w-6 mx-auto " src="./assets/new_images/icons/withdraw.svg" alt="">
                 </div>
@@ -701,8 +701,8 @@
                         <li class="slot-lists-menu p-2 px-4 border-l-4 border-theme-4">슬롯게임</li>
                         <li class="p-2 px-4 border-l-4 border-theme-4">베팅내역</li>
                         <li class="p-2 px-4 border-l-4 border-theme-4">고객센터</li>
-                        <li class="p-2 px-4 border-l-4 border-theme-4">충전신청</li>
-                        <li class="p-2 px-4 border-l-4 border-theme-4">환전신청</li>
+                        <li class="p-2 px-4 border-l-4 border-theme-4" onclick="GoToDepositPage()">충전신청</li>
+                        <li class="p-2 px-4 border-l-4 border-theme-4" onclick="GoToWithdrawalPage()">환전신청</li>
                     </ul>
                 </div>
 
@@ -791,15 +791,15 @@
                 </div>
             </div>
             <div class="grid grid-cols-3 gap-2 text-white text-xs bg-theme-5 border-y border-theme-3 py-4 mb-4">
-                <div class="py-2 text-center">
+                <div class="py-2 text-center" onclick="GoToDepositPage()">
                     <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/deposit.svg" alt="">
                     <p>충전신청</p>
                 </div>
-                <div class="py-2 text-center">
+                <div class="py-2 text-center" onclick="GoToWithdrawalPage()">
                     <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/withdraw.svg" alt="">
                     <p>환전신청</p>
                 </div>
-                <div class="py-2 text-center">
+                <div class="py-2 text-center" onclick="GoToPointHistory()">
                     <img class="w-8 h-10 mb-2 mx-auto" src="./assets/new_images/icons/convert.svg" alt="">
                     <p>포인트전환내역</p>
                 </div>

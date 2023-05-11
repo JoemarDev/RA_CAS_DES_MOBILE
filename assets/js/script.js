@@ -71,7 +71,7 @@ const CloseAccountDialog = () => {
     $('.ACCOUNT_DIALOG').hide();
 }
 
-const OpenNoticeDialog = () => {
+const GoToDepositPage = () => {
     window.location.href = "deposit.html"
 }
 
@@ -79,8 +79,12 @@ const OpenNoticeContent = () => {
     $('.notice_content').toggle();
 }
 
-const OpenEventDialog = () => {
+const GoToWithdrawalPage = () => {
     window.location.href = "withdraw.html"
+}
+
+const GoToPointHistory = () => {
+    window.location.href = "point-history.html"
 }
 
 const OpenEventContent = () => {
