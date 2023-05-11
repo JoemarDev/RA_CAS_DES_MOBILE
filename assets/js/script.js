@@ -216,5 +216,5 @@ const OpenAccountBar = () => {
 
 const CloseAccountBar = () => {
     $('body').css('overflowY', 'scroll');
-    $('.account-bar').css('right', '0%')
+    $('.account-bar').css('right', '-100%')
 }

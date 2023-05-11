@@ -838,7 +838,7 @@
             <div class="h-full grid grid-cols-6">
                 <div class="col-span-2 bg-theme-4">
                     <ul class="text-white font-bold text-sm">
-                        <li class="p-2 px-4 border-l-4 border-theme-3 text-theme-3">카지노</li>
+                        <li class="p-2 px-4 border-l-4 border-theme-4 ">카지노</li>
                         <li class="p-2 px-4 border-l-4 border-theme-4">슬롯게임</li>
                         <li class="p-2 px-4 border-l-4 border-theme-4">미니게임</li>
                         <li class="p-2 px-4 border-l-4 border-theme-4">스포츠</li>
@@ -848,9 +848,7 @@
                         <li class="p-2 px-4 border-l-4 border-theme-4">환전신청</li>
                     </ul>
                 </div>
-                <div class="col-span-4 bg-black">
-                    asdasd
-                </div>
+
             </div>
         </div>
         <!-- SIDE BAR SECTION -->
@@ -879,56 +877,73 @@
                     <img class="w-8 " src="./assets/new_images/icons/close.svg" alt="">
                 </div>
             </div>
-            <!-- ACCOUNT BAR HEADER -->
 
-            <div class="grid grid-cols-6 items-center bg-theme-5 border-b border-theme-3 mb-5">
-                <div class="col-span-3 p-4  text-white">
+            <!-- ACCOUNT BAR HEADER -->
+            <div class="grid grid-cols-8 items-center bg-theme-5 border-b border-theme-3 mb-4">
+                <div class="col-span-5 p-4  text-white">
                     <label class="text-sm font-semibold">보유머니</label>
                     <p class="text-theme-3 font-semibold text-lg">100,000,000 원</p>
                 </div>
-                <div class="col-span-3 text-right p-4 text-white text-xs font-semibold">
-                    <div class="flex items-center justify-end py-4 gap-1 border-b border-theme-3/20">
-                        <label class=" ">카지노머니 :</label>
-                        <p class="text-theme-3  ">100,000,000 <span class="text-white">원</span></p>
-                        <img class="w-6" src="./assets/new_images/icons/exchange.svg" alt="">
+                <div class="col-span-3 text-right px-4 py-2 pl-0 text-white text-xs font-semibold">
+                    <div class="text-left  py-2 gap-1 border-b border-theme-3/20">
+                        <label class="">카지노머니 :</label>
+                        <div class="flex items-center justify-start gap-1">
+                            <p class="text-theme-3 ">100,000,000 <span class="text-white">원</span></p>
+                            <img class="w-6" src="./assets/new_images/icons/exchange.svg" alt="">
+                        </div>
+
                     </div>
-                    <div class="flex items-center justify-end py-4 gap-1">
+
+                    <div class="text-left  py-2 gap-1">
                         <label class="">포인트 :</label>
-                        <p class="text-theme-3  ">100,000,000 <span class="text-white">P</span></p>
-                        <img class="w-6" src="./assets/new_images/icons/exchange.svg" alt="">
+                        <div class="flex items-center justify-start gap-1">
+                            <p class="text-theme-3  ">100,000,000 <span class="text-white">P</span></p>
+                            <img class="w-6" src="./assets/new_images/icons/exchange.svg" alt="">
+                        </div>
+
                     </div>
                 </div>
             </div>
-
-            <div class="grid grid-cols-4 text-white text-xs bg-theme-5 border-y border-theme-3 py-4">
-                <div class="p-2 text-center">
-                    <div class="icon h-12 w-12 rounded-full bg-theme-3 mx-auto mb-2"></div>
+            <div class="grid grid-cols-3 gap-2 text-white text-xs bg-theme-5 border-y border-theme-3 py-4 mb-4">
+                <div class="py-2 text-center">
+                    <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/deposit.svg" alt="">
                     <p>충전신청</p>
                 </div>
-                <div class="p-2 text-center">
-                    <div class="icon h-12 w-12 rounded-full bg-theme-3 mx-auto mb-2"></div>
+                <div class="py-2 text-center">
+                    <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/withdraw.svg" alt="">
                     <p>환전신청</p>
                 </div>
-                <div class="p-2 text-center">
-                    <div class="icon h-12 w-12 rounded-full bg-theme-3 mx-auto mb-2"></div>
+                <div class="py-2 text-center">
+                    <img class="w-8 h-10 mb-2 mx-auto" src="./assets/new_images/icons/convert.svg" alt="">
                     <p>포인트전환내역</p>
                 </div>
-                <div class="p-2 text-center">
-                    <div class="icon h-12 w-12 rounded-full bg-theme-3 mx-auto mb-2"></div>
+                <div class="py-2 text-center">
+                    <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/account-inquiry.svg" alt="">
                     <p>빠른계좌문의</p>
                 </div>
-                <div class="p-2 text-center">
-                    <div class="icon h-12 w-12 rounded-full bg-theme-3 mx-auto mb-2"></div>
+                <div class="py-2 text-center">
+                    <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/customer-service.svg" alt="">
                     <p>고객센터</p>
                 </div>
-
             </div>
-
+            <div class="grid grid-cols-1 gap-4 text-white text-xs bg-theme-5 border-y border-theme-3 py-4 mb-4">
+                <div class="px-2 text-center flex items-center gap-2">
+                    <img class="w-6 h-6  " src="./assets/new_images/icons/betting-history.svg" alt="">
+                    <p class="text-sm font-semibold">베팅내역</p>
+                </div>
+                <div class="px-2 text-center flex items-center gap-2">
+                    <img class="w-6 h-5  " src="./assets/new_images/icons/speaker.svg" alt="">
+                    <p class="text-sm font-semibold">공지사항</p>
+                </div>
+            </div>
+            <div class="p-1">
+                <div class=" border border-theme-3 rounded" style="padding : 2px">
+                    <div class="game-button flex items-center w-full justify-center rounded">로그아웃</div>
+                </div>
+            </div>
 
         </div>
         <!-- ACCOUNT BAR SECTION -->
-
-
 
 
 
