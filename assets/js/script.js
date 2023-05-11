@@ -258,12 +258,11 @@ const PagePopupHandler = () => {
     if (isOpen) {
         isOpen = false;
         $('body').css('overflowY', 'scroll');
+    } else {
+        isOpen = true;
+        $('body').css('overflowY', 'hidden')
     }
 
-    if (!isOpen) {
-        isOpen = true;
-        $('body').css('overflow', 'hidden')
-    }
     $('.money-transfer').toggle();
 }
 
