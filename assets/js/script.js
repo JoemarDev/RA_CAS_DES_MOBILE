@@ -11,6 +11,7 @@ const Init = () => {
     }
 }
 
+
 const CloseAllDialog = () => {
     $('.GAME_DIALOG').hide();
     $('.LOGIN_WRAPPER').hide();
@@ -75,8 +76,8 @@ const GoToDepositPage = () => {
     window.location.href = "deposit.html"
 }
 
-const OpenNoticeContent = () => {
-    $('.notice_content').toggle();
+const GoToNoticePage = () => {
+    window.location.href = "notice.html";
 }
 
 const GoToWithdrawalPage = () => {
@@ -87,13 +88,16 @@ const GoToPointHistory = () => {
     window.location.href = "point-history.html"
 }
 
+const GoToBettingHistory = () => {
+    window.location.href = "betting-history.html"
+}
+
 const OpenEventContent = () => {
     $('.event_content').toggle();
 }
 
 const OpenInquiryDialog = () => {
-    if (!isLogin) return OpenLoginDialog()
-    $('.INQUIRY_DIALOG').show()
+    window.location.href = 'customer-service.html'
 }
 
 const WriteInquiry = () => {
@@ -281,3 +285,13 @@ const PageChildHandler = (elem, type) => {
         $('.popup-child-content-2').show();
     }
 }
+
+
+const ShowChildMenu = (elem) => {
+    $(elem).find('.menu-child-lists').toggle();
+}
+
+$('.memo-table td').click(function () {
+    $(this).parent().next().toggle();
+});
+

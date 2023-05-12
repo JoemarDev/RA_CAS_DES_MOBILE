@@ -1,0 +1,83 @@
+.betting-history-config {
+
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #221c14;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+.betting-history-config .child-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.betting-history-config select {
+    padding: 10px 59px 10px 10px;
+    border: 1px solid #443209;
+    background: #000;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 40px;
+    font-weight: 700;
+    color: #dac179;
+    margin-left: 5px;
+    width: 100%;
+
+}
+
+.betting-history-config select:first-child {
+    margin-left: 0;
+}
+
+.betting-history-config input {
+    padding: 10px 10px 9px 10px;
+    border: 1px solid #443209;
+    background: #000;
+    font-size: 12px;
+    color: #dac179;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-right: 1.9%;
+    flex: 2;
+}
+
+.betting-history-config button {
+    flex: 1;
+}
+
+.betting-history-config input:first-child {
+    margin-left: 0;
+}
+
+.betting-history-config span {
+    margin-left: 5px;
+}
+
+.betting-history-config button {
+    width: 90px;
+    height: 40px;
+    border: 1px solid #e1ca84;
+    background: #e1ca84;
+    background: -moz-linear-gradient(top, #e1ca84 0%, #ac8633 100%);
+    background: -webkit-linear-gradient(top, #e1ca84 0%, #ac8633 100%);
+    background: linear-gradient(to bottom, #e1ca84 0%, #ac8633 100%);
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    border-radius: 0;
+    text-align: center;
+    border: none;
+    margin-left: 5px;
+}
+
+.betting-history-config button:last-child {
+    width: 120px;
+    border-radius: 5px;
+    margin-left: auto;
+}

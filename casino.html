@@ -685,8 +685,9 @@
                         <li class="casino-lists-menu p-2 px-4 border-l-4  border-theme-3 text-theme-3   ">카지노
                         </li>
                         <li class="slot-lists-menu p-2 px-4 border-l-4 border-theme-4">슬롯게임</li>
-                        <li class="p-2 px-4 border-l-4 border-theme-4">베팅내역</li>
-                        <li class="p-2 px-4 border-l-4 border-theme-4">고객센터</li>
+                        <li class="p-2 px-4 border-l-4 border-theme-4" onclick="GoToBettingHistory();">베팅내역</li>
+
+                        <li onclick="OpenInquiryDialog()" class="p-2 px-4 border-l-4 border-theme-4">고객센터</li>
                         <li class="p-2 px-4 border-l-4 border-theme-4" onclick="GoToDepositPage()">충전신청</li>
                         <li class="p-2 px-4 border-l-4 border-theme-4" onclick="GoToWithdrawalPage()">환전신청</li>
                     </ul>
@@ -793,17 +794,19 @@
                     <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/account-inquiry.svg" alt="">
                     <p>빠른계좌문의</p>
                 </div>
-                <div class="py-2 text-center">
+
+                <div class="py-2 text-center" onclick="OpenInquiryDialog()">
                     <img class="w-10 h-10 mb-2 mx-auto" src="./assets/new_images/icons/customer-service.svg" alt="">
                     <p>고객센터</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 gap-4 text-white text-xs bg-theme-5 border-y border-theme-3 py-4 mb-4">
-                <div class="px-2 text-center flex items-center gap-2">
+
+                <div class="px-2 text-center flex items-center gap-2" onclick="GoToBettingHistory()">
                     <img class="w-6 h-6  " src="./assets/new_images/icons/betting-history.svg" alt="">
                     <p class="text-sm font-semibold">베팅내역</p>
                 </div>
-                <div class="px-2 text-center flex items-center gap-2">
+                <div class="px-2 text-center flex items-center gap-2" onclick="GoToNoticePage()">
                     <img class="w-6 h-5  " src="./assets/new_images/icons/speaker.svg" alt="">
                     <p class="text-sm font-semibold">공지사항</p>
                 </div>
