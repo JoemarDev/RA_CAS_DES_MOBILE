@@ -122,6 +122,7 @@ const MemberLogout = () => {
     Init();
     CloseAllDialog()
     CloseAccountDialog()
+    CloseAccountBar();
 }
 
 const ToogleGameTab = (val) => {

@@ -274,7 +274,7 @@ label.title:hover {
     font-weight: 700;
     border-radius: 0;
     padding: 0;
-
+    display: none;
     width: 100px;
     line-height: 35px;
     background: #cc001b;

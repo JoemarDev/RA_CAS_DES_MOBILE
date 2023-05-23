@@ -973,11 +973,11 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 gap-4 text-white text-xs bg-theme-5 border-y border-theme-3 py-4 mb-4">
-                
-        <div class="px-2 text-center flex items-center gap-2" onclick="GoToBettingHistory()">
-            <img class="w-6 h-6  " src="./assets/new_images/icons/betting-history.svg" alt="">
-            <p class="text-sm font-semibold">베팅내역</p>
-        </div>
+
+                <div class="px-2 text-center flex items-center gap-2" onclick="GoToBettingHistory()">
+                    <img class="w-6 h-6  " src="./assets/new_images/icons/betting-history.svg" alt="">
+                    <p class="text-sm font-semibold">베팅내역</p>
+                </div>
                 <div class="px-2 text-center flex items-center gap-2" onclick="GoToNoticePage()">
                     <img class="w-6 h-5  " src="./assets/new_images/icons/speaker.svg" alt="">
                     <p class="text-sm font-semibold">공지사항</p>
@@ -985,7 +985,8 @@
             </div>
             <div class="p-1">
                 <div class=" border border-theme-3 rounded" style="padding : 2px">
-                    <div class="game-button flex items-center w-full justify-center rounded">로그아웃</div>
+                    <div onclick="MemberLogout()" class="game-button flex items-center w-full justify-center rounded">
+                        로그아웃</div>
                 </div>
             </div>
 
