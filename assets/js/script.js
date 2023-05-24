@@ -125,12 +125,15 @@ const MemberLogout = () => {
     CloseAccountBar();
 }
 
+
+let currentActive = null;
 const ToogleGameTab = (val) => {
     // $('body').css("overflowY", "hidden");
-    // $('.GAME_DIALOG').hide();
-
-    // if (val === 1) $(".live-box").show()
-    // if (val === 2) $(".slot-box").show()
+    $('.gm-parent').hide();
+    if (currentActive === val) return currentActive = null;
+    currentActive = val;
+    if (val === 1) $(".live-box").show()
+    if (val === 2) $(".slot-box").show()
     // if (val === 3) $(".sports-box").show()
     // if (val === 4) $(".arcade-box").show()
 
