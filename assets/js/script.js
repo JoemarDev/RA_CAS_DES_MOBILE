@@ -127,13 +127,22 @@ const MemberLogout = () => {
 
 
 let currentActive = null;
-const ToogleGameTab = (val) => {
+const ToogleGameTab = (val, elem) => {
     // $('body').css("overflowY", "hidden");
+    $('.par1').css('opacity', 1);
+    $('.par2').css('opacity', 1);
+
     $('.gm-parent').hide();
     if (currentActive === val) return currentActive = null;
     currentActive = val;
-    if (val === 1) $(".live-box").show()
-    if (val === 2) $(".slot-box").show()
+    if (val === 1) {
+        $('.par2').css('opacity', 0.5);
+        $(".live-box").show()
+    }
+    if (val === 2) {
+        $('.par1').css('opacity', 0.5);
+        $(".slot-box").show()
+    }
     // if (val === 3) $(".sports-box").show()
     // if (val === 4) $(".arcade-box").show()
 
